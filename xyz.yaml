@@ -1,0 +1,14 @@
+﻿apiVersion: v1
+kind: ServiceAccount
+metadata:
+    name: admin-user
+    namespace: kubernetes-dashboard
+roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: cluster-admin
+subjects:
+    -
+        kind: ServiceAccount
+        name: admin-user
+        namespace: kubernetes-dashboard
